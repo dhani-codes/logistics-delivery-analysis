@@ -73,3 +73,36 @@ This analysis compares actual shipping days with scheduled shipping days. It doe
 ## Author
 
 Student project for a Week 1 logistics strategic planning and data exploration internship task.
+
+
+
+## Week 2: Data Collection, Cleaning, and Preprocessing
+
+### Objective
+The objective of Week 2 was to understand data quality and perform basic data cleaning and preprocessing on a logistics dataset using Python. The work included identifying missing values, checking duplicate records, removing completely empty columns, detecting potential outliers, and demonstrating numerical normalization.
+
+### Dataset
+The project uses the DataCo Smart Supply Chain dataset from Kaggle. The original dataset contains 180,519 rows and 53 columns. The dataset was loaded locally using Python and pandas.
+
+Dataset source: https://www.kaggle.com/datasets/shashwatwork/dataco-smart-supply-chain-for-big-data-analysis
+
+### Data Cleaning and Preprocessing
+A Python script named `logistics_preprocessing.py` was created to automate the preprocessing workflow. The script checked the dataset structure, identified missing values, and checked for duplicate rows. No duplicate rows were found. The completely empty `Product Description` column was removed, reducing the dataset from 53 columns to 52 columns while retaining all 180,519 rows.
+
+Missing values remain in certain columns, including `Order Zipcode`, `Customer Lname`, and `Customer Zipcode`. These values were not automatically filled because missing information should be handled according to its meaning and suitability for analysis.
+
+The script also used the Interquartile Range (IQR) method to flag potential outliers in selected numerical columns. It flagged 2,048 potential outliers in `Product Price`. These were treated as candidates for further investigation rather than automatically removed errors.
+
+Min-max normalization was demonstrated on selected numerical features using scikit-learn. The demonstration used median imputation for missing feature values in the normalization sample only; it did not overwrite the original feature values in the cleaned dataset.
+
+### Results
+- Original dataset: 180,519 rows and 53 columns.
+- Final working dataset: 180,519 rows and 52 columns.
+- Duplicate rows removed: 0.
+- Completely empty columns removed: 1.
+- Missing values remaining after cleaning: 155,690.
+- Potential outliers flagged in `Product Price`: 2,048.
+- Cleaned working copy saved locally as `outputs/logistics_cleaned.csv`.
+
+### Conclusion
+This task demonstrated that data quality checks are an essential part of logistics analysis. Missing values, duplicates, and potential outliers must be investigated before drawing conclusions. The preprocessing script provides a repeatable starting point for preparing the dataset for further analysis. The original and cleaned CSV files remain local and are excluded from GitHub; only the Python source code and project documentation are shared publicly.
