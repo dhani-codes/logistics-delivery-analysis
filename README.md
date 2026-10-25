@@ -106,3 +106,30 @@ Min-max normalization was demonstrated on selected numerical features using scik
 
 ### Conclusion
 This task demonstrated that data quality checks are an essential part of logistics analysis. Missing values, duplicates, and potential outliers must be investigated before drawing conclusions. The preprocessing script provides a repeatable starting point for preparing the dataset for further analysis. The original and cleaned CSV files remain local and are excluded from GitHub; only the Python source code and project documentation are shared publicly.
+
+## Week 4: Predictive Modeling and Optimization in Logistics Systems
+
+### Objective
+To develop machine learning models that predict actual shipping duration using logistics and order-related information.
+
+### Work Completed
+- Selected features such as scheduled shipping days, order quantity, product price, sales, shipping mode, and order region.
+- Prepared numerical and categorical features using imputation and one-hot encoding.
+- Split the dataset into training and testing sets.
+- Developed Linear Regression and Random Forest regression models.
+- Evaluated predictions using Mean Absolute Error (MAE), Root Mean Squared Error (RMSE), and R².
+- Implemented 5-fold cross-validation to assess model performance.
+- Saved model comparison, cross-validation results, and sample predictions in the local `outputs/week4/` folder.
+
+### Initial Result
+Linear Regression achieved:
+- MAE: 0.984 days
+- RMSE: 1.266 days
+- R²: 0.392
+
+The models are designed to help estimate shipping duration and support better logistics planning. Further evaluation of the model comparison and cross-validation results will help identify opportunities for improving prediction accuracy.
+
+### Files
+- `logistics_prediction.py`
+- `requirements.txt`
+
